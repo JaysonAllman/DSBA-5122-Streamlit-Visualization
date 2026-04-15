@@ -70,7 +70,22 @@ line_fig = px.line(
     y="Mortality_Rates",
     color="Clinic" if "Clinic" in df.columns else None,
     markers=True,
-    title="Trend Over Time"
+    title="Trend Over Time",
+    color_discrete_map={
+        "clinic 1": "orange",
+        "clinic 2": "blue"
+    }
+)
+
+# Highlight post-1847 period
+line_fig.add_vrect(
+    x0=1847,
+    x1=filtered_df["Year"].max(),
+    fillcolor="purple",
+    opacity=0.15,
+    line_width=0,
+    annotation_text="<b>Handwashing introduced (1847)</b>",
+    annotation_position="top left"
 )
 
 st.plotly_chart(line_fig, use_container_width=True)
@@ -82,7 +97,7 @@ st.subheader("Comparison Across Clinics Total Deaths")
 
 bar_fig = px.bar(
     filtered_df,
-    x="Clinic" if "Clinic" in df.columns else "Year",
+    x="Year",
     y="Deaths",
     color="Clinic" if "Clinic" in df.columns else None,
     barmode="group",
