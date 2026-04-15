@@ -26,7 +26,7 @@ This dashboard explores trends from 1844, when Semmelweis discovered that childb
 # LOAD DATA
 # -----------------------
 # Replace with your dataset path
-df = pd.read_csv(r"C:\Users\jayso\.vscode\DSBA-5122-Streamlit-Visualization\yearly_deaths_by_clinic-1.csv")
+df = pd.read_csv(r"yearly_deaths_by_clinic-1.csv")
 
 # -----------------------
 # Mortality Rates Variable
