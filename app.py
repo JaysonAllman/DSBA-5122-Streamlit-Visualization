@@ -32,7 +32,7 @@ df = pd.read_csv(r"C:\Users\jayso\.vscode\DSBA-5122-Streamlit-Visualization\year
 # Mortality Rates Variable
 # -----------------------
 
-df["Mortality_Rates"] = df["Deaths"] / df["Births"].replace(0, pd.NA)
+df["Mortality_Rates"] = df["Deaths"] / df["Birth"].replace(0, pd.NA)
 
 # -----------------------
 # FILTERS (OPTIONAL)
